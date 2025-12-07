@@ -1,0 +1,6 @@
+The First program which we will do is of the hello world 
+
+
+We can run the go code using the "go run" command  
+
+we can also build binaries and execute them natively  

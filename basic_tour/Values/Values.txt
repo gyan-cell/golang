@@ -1,0 +1,6 @@
+Go Has Various values types including strings integers floats booleans etc.....
+
+
+
+
+
