@@ -1,0 +1,11 @@
+Branching with if and else in Go is Straight Forward
+
+if statment without else is possible 
+
+Logical statment like || , &&  ,~ , ! are often used in the conditions 
+
+A statement can precede conditionals ; any variables declared in this 
+statment are available in the current and subsequent branches 
+
+
+there is no ternary feature in golang 

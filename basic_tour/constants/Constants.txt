@@ -1,0 +1,20 @@
+GO Supports constant of characters , string , boolear and numeric values
+
+
+const declares a constant values 
+
+
+A const Statement can also appear inside a function body 
+
+A constant expressions perform arithmetic with arbitrary precision 
+
+A numeric constant has no type until it is given one , such as by an explicit conversion
+
+
+A number can be given a type by using it in a context that requires one , such as 
+
+a variable assignment or a function call  , for example 
+
+
+math.Sin expects a float64
+

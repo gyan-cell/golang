@@ -1,0 +1,15 @@
+in go the variables are declared and used by the compilers to check type correspondance
+
+var declares one or more variables 
+ more than one variables can be declared at once 
+
+
+ variables initialized without a correspoinding intialization is valued at zero.
+
+
+ the ":=" syntax is a shorthand for declaring and initializing a variable 
+
+ for example , var f string = "apple" , is same as  f := "apple"
+
+ the later syntax is only available in function
+
