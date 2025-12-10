@@ -1,0 +1,29 @@
+Maps are go built in associative data type also called has or dictionsary.
+in other languages
+
+
+To create an empty map , use the builtin make : 
+
+make(map[key-type]val-type).
+
+
+set key/value pairs using typical name[key] = val syntax
+
+
+
+print the map using fmt.Println will show all of it key/value pairs
+
+Get a value for a key using name[key]
+
+
+if the key does not exists the zero value of the value type will be returned
+
+
+
+The builtin len return the number of key/value pairs in the map
+
+
+
+to remove all key/value pairs from a map , use the clear builtin delete
+
+
