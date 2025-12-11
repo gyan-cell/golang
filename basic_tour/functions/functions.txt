@@ -1,0 +1,45 @@
+functions are central in Go 
+
+functions are a group of statements that perform a task
+
+
+GO Requires explicit returns , i,e it will not automatically return a value of a last expression
+when we have multiple consecutive params of the same type , we can omit the type name
+
+call a functions just as u expect it to be called 
+
+
+go has built in support for multiple return values . This feature 
+
+is often used in idiomatic GO , to return both result and error 
+
+values and function
+
+If you only want a subset of the returned values, use the blank identifier _.
+
+
+Variadic Functions can be called with any number of trailing 
+
+arguments , for ex , fmt.Println is common variadic function
+
+Variadic functions can be called in the usual way with individual arguments.
+
+
+If you already have multiple args in a slice, apply them to a variadic function using func(slice...) like this.
+
+
+Go supports anonymous functions which can form closures ,
+anonymous functions are used ti deine a function inline without 
+having to name it 
+
+
+for ex the function intSeq returns another function which we 
+define anonymously in body  . The Returned value captures its own 
+i value which will be updated each time we call nextInt 
+ Go supports recursion , which is when a function calls itself directly or indirectly
+
+
+
+ anonymous functions can be also recursive , 
+ but this requires explicitly declaring a variable with var to 
+ store function before is is defined 
