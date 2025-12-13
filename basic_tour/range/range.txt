@@ -1,0 +1,14 @@
+range interates over elements in a variety of built in data
+
+structures 
+
+range on arrays and slices provide the index and value for each array
+range over map iterates over key/value pairs 
+
+
+range can also just iterarte over just key .
+
+
+range on string iterates iver Unicode code points .
+The first value is the starting byte index of the rune and the second 
+the rune itself

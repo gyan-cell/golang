@@ -1,0 +1,6 @@
+Go supports pointers , allowing you to pass refernces to values
+and records within your programs 
+
+The &i Syntax gives the memory address of i , a pointer to i 
+
+pointers can be printed as well 

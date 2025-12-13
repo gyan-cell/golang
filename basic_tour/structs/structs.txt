@@ -1,0 +1,22 @@
+in go structs are collections of fields , the are useful 
+for grouping data together to form records
+
+Go is garbage collected language  ; you can safely 
+return a pointer to a local variable - it will be cleaned up
+by the garbage collector when there are no active references to 
+it 
+
+
+Structs are mutable in Golang.
+
+It is idiomatic to encapsulate new struct creation 
+in constructor functions access struct fields using dot 
+
+You can also use dots with struct pointers - the pointers are 
+automatically derefernced 
+
+if a struct type is only used for a single value , we do not 
+
+have to give it a name . The vakue can have anonymous struct type .
+This is commonly used for table-driven tests
+
