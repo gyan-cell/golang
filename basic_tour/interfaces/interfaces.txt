@@ -1,0 +1,31 @@
+in Golang interfaces can be thought as contract for specific types
+provides high level organisation , struct can implement interfaces
+as long as struct implements the methods of the interface , struct
+also directly implements interfaces
+
+
+Think of an interface as a contract.
+
+It says:
+
+“Any type that wants to work with me must have these methods.”
+
+It does not care:
+
+how the methods are implemented
+
+what the type’s internal data is
+
+It only cares:
+
+that the methods exist
+
+
+type Animal interface {
+    Speak() string
+}
+Any type that has a method Speak() string is an Animal
+
+You do not explicitly say implements
+
+Go does it automatically

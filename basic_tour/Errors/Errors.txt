@@ -1,0 +1,19 @@
+its idiomaticn to communicate Errors via an explicit 
+seprate return value .This contrats with the other languages out 
+there.
+Go's Approach makes it easy to see which functions return errors 
+and to handle them using the same language constructs
+
+
+
+
+By Convention , errors are the last return value and have 
+type error , a built-in interface
+
+errors.New constructs a basic error with the given error message 
+
+A nil value in the error position indicates that there was no 
+error . 
+
+
+A sentinel error is a predeclares variable that there was no error
