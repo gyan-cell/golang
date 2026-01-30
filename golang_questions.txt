@@ -1,0 +1,212 @@
+Print “Hello, World!” in Go.
+
+Declare variables of all basic types (int, float, string, bool) and print them.
+
+Swap two numbers without using a temporary variable.
+
+Find the largest of three numbers.
+
+Check if a number is even or odd.
+
+Print the Fibonacci sequence up to N.
+
+Calculate factorial of a number using recursion.
+
+Reverse a string.
+
+Count vowels and consonants in a string.
+
+Check if a string is a palindrome.
+
+Convert a string to uppercase and lowercase.
+
+Find the sum of digits of a number.
+
+Find the GCD and LCM of two numbers.
+
+Calculate power of a number without using math.Pow.
+
+Check if a number is prime.
+
+Find all prime numbers up to N.
+
+Implement a basic calculator (add, subtract, multiply, divide).
+
+Count occurrences of each character in a string.
+
+Remove duplicates from an array.
+
+Merge two arrays into one.
+
+
+Find the largest element in an array.
+
+Find the smallest element in an array.
+
+Reverse an array.
+
+Rotate an array by K positions.
+
+Find the second largest element in an array.
+
+Merge two sorted arrays.
+
+Remove an element at a given index from a slice.
+
+Find duplicates in an array.
+
+Check if an array is sorted.
+
+Find the sum of all elements in an array.
+
+Find the maximum subarray sum (Kadane’s algorithm).
+
+Find the intersection of two arrays.
+
+Find union of two arrays.
+
+Move all zeros to the end of an array.
+
+Count frequency of each element in an array.
+
+
+Check if two strings are anagrams.
+
+Reverse words in a sentence.
+
+Find the first non-repeating character in a string.
+
+Check if a string contains only digits.
+
+Count number of words in a string.
+
+Remove all spaces from a string.
+
+Check if a string contains a substring.
+
+Replace all occurrences of a substring.
+
+Implement your own strings.Contains function.
+
+Implement your own strings.Split function.
+
+
+
+Count occurrences of elements in an array using a map.
+
+Group words by their length using a map.
+
+Find the most frequent element in an array using a map.
+
+Merge two maps.
+
+Check if a key exists in a map.
+
+Create a Person struct with name, age, and address.
+
+Implement a method to display struct info.
+
+Update struct fields dynamically.
+
+Compare two structs for equality.
+
+Store multiple structs in a slice and sort by age.
+
+Implement a struct with embedded struct.
+
+Implement JSON marshalling for a struct.
+
+Implement JSON unmarshalling from a string.
+
+Count occurrences of characters using a map.
+
+Implement a map of maps and perform CRUD operations.
+
+
+Implement a function that returns multiple values.
+
+Implement a function that accepts a variable number of arguments.
+
+Implement recursive factorial.
+
+Implement recursive Fibonacci.
+
+Implement a function to check palindrome recursively.
+
+Implement sum of array elements recursively.
+
+Implement binary search recursively.
+
+Implement power function recursively.
+
+Swap two numbers using a function.
+
+Implement GCD function recursively.
+
+
+Implement bubble sort.
+
+Implement selection sort.
+
+Implement insertion sort.
+
+Implement merge sort.
+
+Implement quick sort.
+
+Implement binary search.
+
+Find first and last occurrence of an element in a sorted array.
+
+Find missing number in an array of 1 to N.
+
+Find the majority element in an array.
+
+Find kth largest element in an array.
+
+
+-- goroutine
+
+Launch a goroutine to print numbers 1–10.
+
+Use channels to communicate between goroutines.
+
+Implement a worker pool with goroutines and channels.
+
+Synchronize goroutines using sync.WaitGroup.
+
+Implement a counter safely using sync.Mutex.
+
+Implement a simple pipeline using channels.
+
+Use select to listen on multiple channels.
+
+Implement concurrent Fibonacci calculation.
+
+Implement a timeout for a goroutine using time.After.
+
+Use buffered channels to control flow between goroutines.
+
+
+
+Read a file line by line.
+
+Write text to a file.
+
+Append text to an existing file.
+
+Count number of words in a file.
+
+Copy contents of one file to another.
+
+
+
+Implement a simple HTTP server.
+
+Make an HTTP GET request and print the response.
+
+Parse JSON from an HTTP response.
+
+Implement a simple REST API with GET and POST.
+
+Implement a TCP client-server program.

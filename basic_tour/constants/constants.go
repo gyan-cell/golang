@@ -7,6 +7,8 @@ import (
 
 const s string = "Constant"
 
+const hello string = " He;;p "
+
 func main() {
 	fmt.Println(s)
 
