@@ -9,9 +9,9 @@ Find the largest of three numbers.
 Check if a number is even or odd.
 
 Print the Fibonacci sequence up to N.
-
 Calculate factorial of a number using recursion.
 
+--
 Reverse a string.
 
 Count vowels and consonants in a string.
