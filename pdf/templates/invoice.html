@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f4f8;
+      padding: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eaeaea;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      margin: 0;
+      color: #1e3a8a;
+      font-size: 28px;
+    }
+
+    .date {
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* SECTION */
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .label {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .value {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* AMOUNT BOX */
+    .amount-box {
+      background: #f8fafc;
+      border: 2px dashed #1e3a8a;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+      margin-top: 30px;
+    }
+
+    .amount-box span {
+      display: block;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .amount-box strong {
+      font-size: 32px;
+      color: #1e3a8a;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 40px;
+      padding-top: 15px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+    }
+
+    /* PRINT SUPPORT */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+
+      .container {
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>{{ .Title }}</h1>
+      <div class="date">
+        {{ .Date }}
+      </div>
+    </div>
+
+    <!-- CUSTOMER -->
+    <div class="section">
+      <div class="label">Customer</div>
+      <div class="value">{{ .Customer }}</div>
+    </div>
+
+    <!-- AMOUNT -->
+    <div class="amount-box">
+      <span>Total Amount</span>
+      <strong>${{ .Amount }}</strong>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>This document was generated automatically.</p>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
