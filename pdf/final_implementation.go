@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/base64"
 	"html/template"
 	"os"
 	"path/filepath"
@@ -16,6 +17,7 @@ type InvoiceData struct {
 	Customer string
 	Amount   int
 	Date     string
+	Logo     string
 }
 
 func RenderHtml(templatePath string, data any) (string, error) {
@@ -75,6 +77,10 @@ func PrintPDF(html string, outputDir, fileName string) error {
 }
 
 func main() {
+
+	logoBytes, err := os.ReadFile("assets/random.jpg")
+	logoBase64 := base64.StdEncoding.EncodeToString(logoBytes)
+
 	html, err := RenderHtml(
 		"templates/invoice.html",
 		InvoiceData{
@@ -82,6 +88,7 @@ func main() {
 			Customer: "Naresh Kumar",
 			Amount:   500,
 			Date:     "04 Feb 2026",
+			Logo:     logoBase64,
 		},
 	)
 	if err != nil {

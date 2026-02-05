@@ -36,6 +36,17 @@
       margin-bottom: 30px;
     }
 
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header img {
+      width: 60px;
+      height: auto;
+    }
+
     .header h1 {
       margin: 0;
       color: #1e3a8a;
@@ -94,7 +105,6 @@
       text-align: center;
     }
 
-    /* PRINT SUPPORT */
     @media print {
       body {
         background: none;
@@ -113,12 +123,14 @@
 
   <div class="container">
 
-    <!-- HEADER -->
+    <!-- HEADER WITH IMAGE -->
     <div class="header">
-      <h1>{{ .Title }}</h1>
-      <div class="date">
-        {{ .Date }}
+      <div class="header-left">
+        <img src="data:image/jpeg;base64,{{ .Logo }}" alt="Test Image">
+
+        <h1>{{ .Title }}</h1>
       </div>
+      <div class="date">{{ .Date }}</div>
     </div>
 
     <!-- CUSTOMER -->
