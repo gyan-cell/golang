@@ -73,7 +73,7 @@ func mergeFromURLs(ctx context.Context, urls []string, output string) error {
 			return err
 		}
 
-		_, err = io.Copy(out, io.LimitReader(resp.Body, 50<<20))
+		_, err = io.Copy(out, io.LimitReader(resp.Body, 10<<20))
 		out.Close()
 		resp.Body.Close()
 
