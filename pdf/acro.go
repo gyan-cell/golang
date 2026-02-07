@@ -115,7 +115,6 @@ func main() {
 	// set to "" to disable had to be done
 	jsonFile := ""
 
-	// 🔹 Option 2: inline fields (used if jsonFile == "")
 	inlineFields := map[string]string{
 		" Address 1 Text Box":        "MG Road",
 		" Address 2 Text Box":        "Near City Mall",
