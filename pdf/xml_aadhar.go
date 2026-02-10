@@ -9,6 +9,7 @@ import (
 	"io"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/jung-kurt/gofpdf"
 )
@@ -42,9 +43,9 @@ type UidData struct {
 
 func main() {
 	uid, issueDate := parseXML("aadhaar.xml")
-	hasPhoto := decodePhoto(uid.Pht, "photo.jpg")
-	generateUIDAIPDF(uid, issueDate, hasPhoto)
-	fmt.Println("🎉 Aadhaar UIDAI-style PDF generated")
+	photo, hasPhoto := decodePhoto(uid.Pht)
+	generateUIDAIPDF(uid, issueDate, photo, hasPhoto)
+	fmt.Println("Aadhaar UIDAI-style PDF generated")
 }
 
 func parseXML(path string) (*UidData, string) {
@@ -64,38 +65,38 @@ func parseXML(path string) (*UidData, string) {
 	return &c.CertificateData.KycRes.UidData, issueDate
 }
 
-func decodePhoto(pht, out string) bool {
+func decodePhoto(pht string) ([]byte, bool) {
 	clean := strings.Join(strings.Fields(pht), "")
 	if len(clean) < 1000 {
-		return false
+		return nil, false
 	}
 
 	raw, err := base64.StdEncoding.DecodeString(clean)
 	if err != nil {
-		return false
+		return nil, false
 	}
 
 	if len(raw) > 2 && raw[0] == 0x1f && raw[1] == 0x8b {
 		r, err := gzip.NewReader(bytes.NewReader(raw))
 		if err != nil {
-			return false
+			return nil, false
 		}
 		defer r.Close()
+
 		raw, err = io.ReadAll(r)
 		if err != nil {
-			return false
+			return nil, false
 		}
 	}
 
 	if len(raw) < 4 || raw[0] != 0xFF || raw[1] != 0xD8 {
-		return false
+		return nil, false
 	}
 
-	_ = os.WriteFile(out, raw, 0644)
-	return true
+	return raw, true
 }
 
-func generateUIDAIPDF(u *UidData, issueDate string, hasPhoto bool) {
+func generateUIDAIPDF(u *UidData, issueDate string, photo []byte, hasPhoto bool) {
 	pdf := gofpdf.New("P", "mm", "A4", "")
 	pdf.AddPage()
 
@@ -120,13 +121,18 @@ func generateUIDAIPDF(u *UidData, issueDate string, hasPhoto bool) {
 	pdf.SetXY(25, 45)
 	pdf.Cell(0, 5, "Unique Identification Authority of India")
 
-	// Photo
+	// Photo (embedded from memory)
 	if hasPhoto {
-		pdf.Image("photo.jpg", 25, 58, 30, 38, false, "", 0, "")
+		pdf.RegisterImageOptionsReader(
+			"aadhaar_photo",
+			gofpdf.ImageOptions{ImageType: "JPG", ReadDpi: true},
+			bytes.NewReader(photo),
+		)
+		pdf.Image("aadhaar_photo", 25, 58, 30, 38, false, "", 0, "")
 	}
 	pdf.Rect(25, 58, 30, 38, "D")
 
-	// Text rows (aligned)
+	// Text rows
 	drawRow(pdf, 60, 85, 60, "Name", u.Poi.Name)
 	drawRow(pdf, 60, 85, 68, "DOB", u.Poi.Dob)
 	drawRow(pdf, 60, 85, 76, "Gender", gender(u.Poi.Gender))
@@ -184,8 +190,14 @@ func gender(g string) string {
 }
 
 func extractDate(ts string) string {
-	if len(ts) >= 10 {
+	if len(ts) < 10 {
+		return ts
+	}
+
+	t, err := time.Parse("2006-01-02", ts[:10])
+	if err != nil {
 		return ts[:10]
 	}
-	return ts
+
+	return t.Format("02 January 2006")
 }

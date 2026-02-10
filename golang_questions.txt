@@ -15,9 +15,9 @@ Reverse a string.
 
 Count vowels and consonants in a string.
 
---
 Check if a string is a palindrome.
 
+--
 Convert a string to uppercase and lowercase.
 
 Find the sum of digits of a number.
