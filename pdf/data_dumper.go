@@ -66,7 +66,7 @@ func generateJSONTemplate(pdfPath, outputJSON string) error {
 }
 
 func main() {
-	pdfPath := "foreSome.pdf"         // your PDF
+	pdfPath := "drafter.pdf"          // your PDF
 	outputJSON := "pdf_template.json" // generated JSON
 
 	if err := generateJSONTemplate(pdfPath, outputJSON); err != nil {

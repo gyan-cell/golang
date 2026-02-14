@@ -109,11 +109,11 @@ func fillPDF(inputPDF, outputPDF string, data map[string]string) error {
 }
 
 func main() {
-	inputPDF := "./foreSome.pdf"
+	inputPDF := "drafter.pdf"
 	outputPDF := "form_filled.pdf"
 
 	// set to "" to disable had to be done
-	jsonFile := ""
+	jsonFile := "data.json"
 
 	inlineFields := map[string]string{
 		" Address 1 Text Box":        "MG Road",
